@@ -23,45 +23,35 @@ for n in range(80):
     for i in range(4):
         
         datos = data_vector[i]    
-        #print(data_vector[i])
-        #print(data_vector)
-        
-        #delete = np.delete(alarmas,range(len(alarmas)))
-        #print(datos)
-        #print(n)
+
         datos_plot = datos[n:n+20]
-        #print(datos[n:n+20])
-        #print(datos_plot)
-        #print(np.shape(datos_plot))
         
         guardar.append(datos_plot)
-        #print(guardar[0])
-        #print(np.shape(guardar))
-        #print(guardar[i])
-        #plt.plot(es,guardar)
-        #plt.show()
-    
-    #print(len(guardar))
     
     
     axs[0,0].set_title("A")
     axs[0,0].plot(es,guardar[0], c="r")
+    axs[0,0].axis([0, 23, -2, 2])
 
     axs[0,1].set_title("B")
     axs[0,1].plot(es,guardar[1], c="c")
+    axs[0,1].axis([0, 23, -2, 2])
 
     axs[1,0].set_title("C")
     axs[1,0].plot(es,guardar[2], c="k")
+    axs[1,0].axis([0, 23, -2, 2])
 
     axs[1,1].set_title("D")
     axs[1,1].plot(es,guardar[3], linewidth = "2")
+    axs[1,1].axis([0, 23, -2, 2])
     
-    plt.pause(0.5)
+    plt.pause(0.01)
+
     axs[0,0].cla()
     axs[0,1].cla()
     axs[1,0].cla()
     axs[1,1].cla()
-    #plt.cla()
+
     guardar=[]
 
 
